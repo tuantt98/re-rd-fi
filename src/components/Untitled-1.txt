@@ -1,0 +1,20 @@
+  addData = (item) => {
+    console.log('APP')
+    console.log(item)
+    
+    let connectData = firebase.database().ref()
+    connectData.push(item)
+  }
+  pushData =() =>{
+    let connectData = firebase.database().ref()
+    connectData.push({
+      title: 'Ghi chú mới',
+      content: 'Nội dung ghi chú mới'
+    })
+  }
+
+  delData = (id) => {
+    let connectData = firebase.database().ref()
+    connectData.child(id).remove();
+    console.log('Đã xoá')
+  }
